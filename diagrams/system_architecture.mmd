@@ -1,0 +1,14 @@
+flowchart LR
+ U[User] --> MIC[Microphone]
+ MIC --> STT[Speech input / STT]
+ STT --> N[Text normalizer]
+ N --> R[Command router]
+ R --> S[Allow-listed skills]
+ S --> OUT[Response builder]
+ OUT --> TTS[Windows SAPI]
+ OUT --> CON[Console output]
+ S <--> STORE[Local notes / preferences]
+ CFG[Configuration] --> R
+ TESTS[Unit and integration tests] -. validate .-> N
+ TESTS -. validate .-> R
+ AI[Future Level 2 AI adapter] -. optional .-> R

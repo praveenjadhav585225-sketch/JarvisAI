@@ -1,0 +1,37 @@
+name: Feature
+description: Propose a JARVIS feature
+title: "[FEATURE] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: story
+    attributes:
+      label: User story / problem
+      placeholder: "As a user, I want..."
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      placeholder: "- [ ] Given ..., when ..., then ..."
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options: ["Must", "Should", "Could"]
+    validations:
+      required: true
+  - type: input
+    id: sprint
+    attributes:
+      label: Target sprint
+      placeholder: "Sprint 1"
+  - type: textarea
+    id: testing
+    attributes:
+      label: Testing plan
+    validations:
+      required: true

@@ -1,0 +1,14 @@
+flowchart TD
+ A[Start] --> B[Listen]
+ B --> C{Speech recognized?}
+ C -- No --> D[Explain error / retry]
+ D --> B
+ C -- Yes --> E[Normalize phrase]
+ E --> F{Known command?}
+ F -- Yes --> G[Run allow-listed skill]
+ F -- No --> H[Unknown-command response]
+ G --> I[Print and speak response]
+ H --> I
+ I --> J{Exit requested?}
+ J -- No --> B
+ J -- Yes --> K[Shutdown]
